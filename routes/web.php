@@ -27,7 +27,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['2fa'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::post('/2fa', function () {
-        return redirect(route('layout.front'));
+        return redirect(route('home'));
     })->name('2fa');
 });
 
