@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSecurityRequest;
-use App\Http\Requests\UpdateSecurityRequest;
+
 use App\Models\Security;
+use Illuminate\Http\Request;
 
 class SecurityController extends Controller
 {
@@ -27,7 +27,7 @@ class SecurityController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSecurityRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -51,7 +51,7 @@ class SecurityController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSecurityRequest $request, Security $security)
+    public function update(Request $request, Security $security)
     {
         //
     }

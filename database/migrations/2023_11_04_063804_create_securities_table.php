@@ -21,6 +21,7 @@ return new class extends Migration
             $table->decimal('movement', 4, 0)->unsigned()->default(0);
             $table->decimal('glass_break', 4, 0)->unsigned()->default(0);
             $table->decimal('perimeter', 4, 0)->unsigned()->default(0);
+            $table->decimal('smoke', 4, 0)->unsigned()->default(0);
             $table->timestamps();
         });
     }

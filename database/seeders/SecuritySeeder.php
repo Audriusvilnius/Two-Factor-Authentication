@@ -22,6 +22,7 @@ class SecuritySeeder extends Seeder
             'movement' => rand(0, 1),
             'glass_break' => rand(0, 1),
             'perimeter' => rand(0, 1),
+            'smoke' => rand(0, 1),
         ]);
     }
 }

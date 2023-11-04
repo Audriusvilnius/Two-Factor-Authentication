@@ -22,11 +22,12 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['2fa'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::post('/2fa', function () {
-        return redirect(route('home'));
+        return redirect(route('layout.front'));
     })->name('2fa');
 });
 
