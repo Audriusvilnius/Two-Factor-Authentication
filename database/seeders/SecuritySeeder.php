@@ -19,7 +19,7 @@ class SecuritySeeder extends Seeder
             'windows' => rand(0, 1),
             'indoor_gate' => rand(0, 1),
             'outdoor_gate' => rand(0, 1),
-            'movement' => rand(0, 1),
+            'motion' => rand(0, 1),
             'glass_break' => rand(0, 1),
             'perimeter' => rand(0, 1),
             'smoke' => rand(0, 1),

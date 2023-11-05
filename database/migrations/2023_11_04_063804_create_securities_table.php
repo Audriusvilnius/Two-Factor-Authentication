@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('windows', 4, 0)->unsigned()->default(0);
             $table->decimal('indoor_gate', 4, 0)->unsigned()->default(0);
             $table->decimal('outdoor_gate', 4, 0)->unsigned()->default(0);
-            $table->decimal('movement', 4, 0)->unsigned()->default(0);
+            $table->decimal('motion', 4, 0)->unsigned()->default(0);
             $table->decimal('glass_break', 4, 0)->unsigned()->default(0);
             $table->decimal('perimeter', 4, 0)->unsigned()->default(0);
             $table->decimal('smoke', 4, 0)->unsigned()->default(0);
