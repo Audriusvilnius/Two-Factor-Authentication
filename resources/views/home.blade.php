@@ -43,8 +43,8 @@
                         @endif
                         @if ($item->status == 0)
                             <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -107,8 +107,8 @@
                         @endif
                         @if ($item->doors == 0)
                             <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -181,8 +181,8 @@
                         @endif
                         @if ($item->windows == 0)
                             <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -258,8 +258,8 @@
                         @endif
                         @if ($item->indoor_gate == 0)
                             <div class="col text-center" id="indoor_gate">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -319,8 +319,8 @@
                         @endif
                         @if ($item->outdoor_gate == 0)
                             <div class="col text-center" id="outdoor_gate">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -378,8 +378,8 @@
                         @endif
                         @if ($item->perimeter == 0)
                             <div class="col text-center" id="perimeter">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -439,8 +439,8 @@
                         @endif
                         @if ($item->motion == 0)
                             <div class="col text-center" id="motion">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -497,8 +497,8 @@
                         @endif
                         @if ($item->glass_break == 0)
                             <div class="col text-center" id="glass_break">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -554,8 +554,8 @@
                         @endif
                         @if ($item->smoke == 0)
                             <div class="col text-center" id="smoke">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: rgb(1, 132, 184);">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
