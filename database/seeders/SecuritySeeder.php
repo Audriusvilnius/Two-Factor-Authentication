@@ -14,15 +14,15 @@ class SecuritySeeder extends Seeder
     public function run(): void
     {
         DB::table('securities')->insert([
-            'status' => rand(0, 1),
-            'doors' => rand(0, 1),
-            'windows' => rand(0, 1),
-            'indoor_gate' => rand(0, 1),
-            'outdoor_gate' => rand(0, 1),
-            'motion' => rand(0, 1),
-            'glass_break' => rand(0, 1),
-            'perimeter' => rand(0, 1),
-            'smoke' => rand(0, 1),
+            'status' => 0,
+            'doors' => 0,
+            'windows' => 0,
+            'indoor_gate' => 0,
+            'outdoor_gate' => 0,
+            'motion' => 0,
+            'glass_break' => 0,
+            'perimeter' => 0,
+            'smoke' => 1,
         ]);
     }
 }

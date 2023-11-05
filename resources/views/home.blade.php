@@ -4,24 +4,26 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="card">
-                    <div class="card-header">{{ __('Home security dashboard') }}</div>
-                    <div class="card-body">
+                <div class="card rounded-4">
+                    <div class="card-header text-bg-dark card rounded-4">
+                        <h1 class="pb-3">{{ __('Home security dashboard') }}</h1>
+                    </div>
+                    {{-- <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
                                 {{ session('status') }}
                             </div>
                         @endif
                         {{ __('You are logged in!') }}
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-3 align-items-stretch g-4 py-5">
-                    @foreach ($security as $item)
+                    @forelse ($security as $item)
                         {{-- Security status --}}
                         @if ($item->status == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div id="{{ $item }}" class="col text-center">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -33,7 +35,8 @@
                                         </svg>
                                         <small>Home armed</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Security activated</h3>
-                                        <a href="#" class="btn btn-danger mt-2 fs-4">Disarm</a>
+                                        <a href="{{ route('security-all_disarmed') }}"
+                                            class="btn btn-danger mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
                             </div>
@@ -51,7 +54,8 @@
                                         </svg>
                                         <small>Home unarmed</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Security deactivated</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Secure</a>
+                                        <a href="{{ route('security-all_armed') }}"
+                                            class="btn btn-warning mt-2 fs-4">Secure</a>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +75,8 @@
                                         </svg>
                                         <small>Home armed</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Alarm</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Disarm</a>
+                                        <a href="{{ route('security-all_disarmed') }}"
+                                            class="btn btn-warning mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,8 +85,8 @@
                         {{-- Dors status --}}
                         @if ($item->doors == 1)
                             <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -92,7 +97,10 @@
                                         </svg>
                                         <small>Door lock</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Doors are locked</h3>
-                                        <a href="#" class="btn btn-danger mt-2 fs-4">Unlock</a>
+                                        @if ($item->status == 0)
+                                            <a href="{{ route('security-door_unlock') }}"
+                                                class="btn btn-danger mt-2 fs-4">Unlock</a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -105,13 +113,13 @@
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
                                             fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                                            <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z" />
                                             <path
-                                                d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z" />
+                                                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
                                         </svg>
                                         <small>Door unlock</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Doors are unlocked</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Lock</a>
+                                        <a href="{{ route('security-door_lock') }}"
+                                            class="btn btn-warning mt-2 fs-4">Lock</a>
                                     </div>
                                 </div>
                             </div>
@@ -123,11 +131,9 @@
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
-                                            fill="currentColor" class="bi bi-shield-exclamation" viewBox="0 0 16 16">
+                                            fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
                                             <path
-                                                d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z" />
-                                            <path
-                                                d="M7.001 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.553.553 0 0 1-1.1 0L7.1 4.995z" />
+                                                d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
                                         </svg>
                                         <small>Door open</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Alarm</h3>
@@ -156,8 +162,8 @@
                         {{-- Windows status --}}
                         @if ($item->windows == 1)
                             <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -228,9 +234,9 @@
 
                         {{-- Indoor gate status --}}
                         @if ($item->indoor_gate == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div class="col text-center" id="indoor_gate">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -242,13 +248,16 @@
                                         </svg>
                                         <small>It's safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Indoor gate closed</h3>
-                                        <a href="#" class="btn btn-danger mt-2 fs-4">Open</a>
+                                        @if ($item->status == 0)
+                                            <a href="{{ route('security-ingate_open') }}"
+                                                class="btn btn-danger mt-2 fs-4">Open</a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                         @endif
                         @if ($item->indoor_gate == 0)
-                            <div class="col text-center">
+                            <div class="col text-center" id="indoor_gate">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -260,13 +269,14 @@
                                         </svg>
                                         <small>It is not safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Indoor gate open</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Close</a>
+                                        <a href="{{ route('security-ingate_close') }}"
+                                            class="btn btn-warning mt-2 fs-4">Close</a>
                                     </div>
                                 </div>
                             </div>
                         @endif
                         @if ($item->indoor_gate == 2)
-                            <div class="col text-center">
+                            <div class="col text-center" id="indoor_gate">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -287,9 +297,9 @@
 
                         {{-- Outdoor gate status --}}
                         @if ($item->outdoor_gate == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div class="col text-center" id="outdoor_gate">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -301,13 +311,14 @@
                                         </svg>
                                         <small>It's safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Outdoor gate closed</h3>
-                                        <a href="#" class="btn btn-danger mt-2 fs-4">Open</a>
+                                        <a href="{{ route('security-outgate_open') }}"
+                                            class="btn btn-danger mt-2 fs-4">Open</a>
                                     </div>
                                 </div>
                             </div>
                         @endif
                         @if ($item->outdoor_gate == 0)
-                            <div class="col text-center">
+                            <div class="col text-center" id="outdoor_gate">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -319,13 +330,14 @@
                                         </svg>
                                         <small>It is not safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Outdoor gate open</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Close</a>
+                                        <a href="{{ route('security-outgate_close') }}"
+                                            class="btn btn-warning mt-2 fs-4">Close</a>
                                     </div>
                                 </div>
                             </div>
                         @endif
                         @if ($item->outdoor_gate == 2)
-                            <div class="col text-center">
+                            <div class="col text-center" id="outdoor_gate">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -346,9 +358,9 @@
 
                         {{-- Perimeter status --}}
                         @if ($item->perimeter == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div class="col text-center" id="perimeter">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -358,13 +370,14 @@
                                         </svg>
                                         <small>It's safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Perimeter is security</h3>
-                                        <a href="#" class="btn btn-danger mt-2 fs-4">Disarm</a>
+                                        <a href="{{ route('security-perimeter_disarmed') }}"
+                                            class="btn btn-danger mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
                             </div>
                         @endif
                         @if ($item->perimeter == 0)
-                            <div class="col text-center">
+                            <div class="col text-center" id="perimeter">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -376,13 +389,14 @@
                                         </svg>
                                         <small>It is not safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Perimeter disarmed</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Secure</a>
+                                        <a href="{{ route('security-perimeter_armed') }}"
+                                            class="btn btn-warning mt-2 fs-4">Secure</a>
                                     </div>
                                 </div>
                             </div>
                         @endif
                         @if ($item->perimeter == 2)
-                            <div class="col text-center">
+                            <div class="col text-center" id="perimeter">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -396,7 +410,8 @@
                                         </svg>
                                         <small>Perimeter cross</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Alarm</h3>
-                                        <a href="#" class="btn btn-warning mt-2 fs-4">Disarm</a>
+                                        <a href="{{ route('security-perimeter_disarmed') }}"
+                                            class="btn btn-warning mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
                             </div>
@@ -404,9 +419,9 @@
 
                         {{-- Motion status --}}
                         @if ($item->motion == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div class="col text-center" id="motion">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -423,7 +438,7 @@
                             </div>
                         @endif
                         @if ($item->motion == 0)
-                            <div class="col text-center">
+                            <div class="col text-center" id="motion">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -440,7 +455,7 @@
                             </div>
                         @endif
                         @if ($item->motion == 2)
-                            <div class="col text-center">
+                            <div class="col text-center" id="motion">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -461,9 +476,9 @@
 
                         {{-- Glass break status --}}
                         @if ($item->glass_break == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div class="col text-center" id="glass_break">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -481,7 +496,7 @@
                             </div>
                         @endif
                         @if ($item->glass_break == 0)
-                            <div class="col text-center">
+                            <div class="col text-center" id="glass_break">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -499,7 +514,7 @@
                             </div>
                         @endif
                         @if ($item->glass_break == 2)
-                            <div class="col text-center">
+                            <div class="col text-center" id="glass_break">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -520,9 +535,9 @@
 
                         {{-- Fire status --}}
                         @if ($item->smoke == 1)
-                            <div class="col text-center">
-                                <div class="card card-cover h-100 overflow-hidden text-bg-success rounded-4 shadow-lg"
-                                    style="background-image: url('unsplash-photo-1.jpg');">
+                            <div class="col text-center" id="smoke">
+                                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg"
+                                    style="background-image: url('unsplash-photo-1.jpg'); background: #00816A;">
                                     <div
                                         class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 justify-content-center align-items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86"
@@ -538,7 +553,7 @@
                             </div>
                         @endif
                         @if ($item->smoke == 0)
-                            <div class="col text-center">
+                            <div class="col text-center" id="smoke">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-primary rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -556,7 +571,7 @@
                             </div>
                         @endif
                         @if ($item->glass_break == 2)
-                            <div class="col text-center">
+                            <div class="col text-center" id="smoke">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">
                                     <div
@@ -572,7 +587,9 @@
                                 </div>
                             </div>
                         @endif
-                    @endforeach
+                    @empty
+                        <h2 class="list-group-item">No types yet</h2>
+                    @endforelse
                 </div>
             </div>
         </div>
