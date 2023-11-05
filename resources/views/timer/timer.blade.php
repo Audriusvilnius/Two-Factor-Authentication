@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container ">
-        <h1>Countdown Clock</h1>
+        <h1>Processing Clock</h1>
         <div id="clockdiv">
             {{-- <div>
                 <span class="days"></span>
