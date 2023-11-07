@@ -64,7 +64,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Home security off:",
+            'security' => "Home security in:",
         ]);
     }
 
@@ -79,7 +79,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Perimeter on after:",
+            'security' => "Perimeter on in:",
         ]);
     }
 
@@ -94,7 +94,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Perimeter off after:",
+            'security' => "Perimeter off in:",
         ]);
     }
 
@@ -109,7 +109,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Outdoor gate open after:",
+            'security' => "Outdoor gate open in:",
         ]);
     }
     /**
@@ -123,7 +123,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Outdoor gate close after:",
+            'security' => "Outdoor gate close in:",
         ]);
     }
     /**
@@ -137,7 +137,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Indoor gate open after:",
+            'security' => "Indoor gate open in:",
         ]);
     }
     /**
@@ -165,7 +165,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Door lock after:",
+            'security' => "Door lock in:",
         ]);
     }
     /**
@@ -179,7 +179,7 @@ class SecurityController extends Controller
             $security->save();
         }
         return view('timer.timer', [
-            'security' => "Door unlock after:",
+            'security' => "Door unlock in:",
         ]);
     }
 }
