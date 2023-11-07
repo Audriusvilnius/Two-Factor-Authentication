@@ -41,7 +41,8 @@ class SecurityController extends Controller
             $security->smoke = 1;
             $security->save();
         }
-        return view('timer.timer');
+        // return view('timer.timer');
+        return view('timer.timer', ['security' => "Home security on:"]);
     }
 
     /**
@@ -62,7 +63,9 @@ class SecurityController extends Controller
             $security->smoke = 0;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Home security off:",
+        ]);
     }
 
     /**
@@ -75,7 +78,9 @@ class SecurityController extends Controller
             $security->perimeter = 1;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Perimeter on after:",
+        ]);
     }
 
     /**
@@ -88,7 +93,9 @@ class SecurityController extends Controller
             $security->perimeter = 0;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Perimeter off after:",
+        ]);
     }
 
     /**
@@ -101,7 +108,9 @@ class SecurityController extends Controller
             $security->outdoor_gate = 0;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Outdoor gate open after:",
+        ]);
     }
     /**
      * Outdoor gate open the alarm system.
@@ -113,7 +122,9 @@ class SecurityController extends Controller
             $security->outdoor_gate = 1;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Outdoor gate close after:",
+        ]);
     }
     /**
      * Indoor gate open the alarm system.
@@ -125,7 +136,9 @@ class SecurityController extends Controller
             $security->indoor_gate = 0;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Indoor gate open after:",
+        ]);
     }
     /**
      * Indoor gate close the alarm system.
@@ -137,7 +150,9 @@ class SecurityController extends Controller
             $security->indoor_gate = 1;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Indoor gate close after:",
+        ]);
     }
     /**
      * Door lock the alarm system.
@@ -149,7 +164,9 @@ class SecurityController extends Controller
             $security->doors = 1;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Door lock after:",
+        ]);
     }
     /**
      * Door unlock the alarm system.
@@ -161,6 +178,8 @@ class SecurityController extends Controller
             $security->doors = 0;
             $security->save();
         }
-        return view('timer.timer');
+        return view('timer.timer', [
+            'security' => "Door unlock after:",
+        ]);
     }
 }

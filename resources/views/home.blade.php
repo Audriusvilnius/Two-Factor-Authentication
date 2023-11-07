@@ -35,7 +35,7 @@
                                         </svg>
                                         <small>Home armed</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Security activated</h3>
-                                        <a href="{{ route('security-all_disarmed') }}"
+                                        <a href="{{ route('security-all_disarmed', $item->status) }}"
                                             class="btn btn-danger mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                         </svg>
                                         <small>Home unarmed</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Security deactivated</h3>
-                                        <a href="{{ route('security-all_armed') }}"
+                                        <a href="{{ route('security-all_armed', $item->status) }}"
                                             class="btn btn-warning mt-2 fs-4">Secure</a>
                                     </div>
                                 </div>
@@ -75,7 +75,7 @@
                                         </svg>
                                         <small>Home armed</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Alarm</h3>
-                                        <a href="{{ route('security-all_disarmed') }}"
+                                        <a href="{{ route('security-all_disarmed', $item->status) }}"
                                             class="btn btn-warning mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
@@ -98,7 +98,7 @@
                                         <small>Door lock</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Doors are locked</h3>
                                         @if ($item->status == 0)
-                                            <a href="{{ route('security-door_unlock') }}"
+                                            <a href="{{ route('security-door_unlock', $item->doors) }}"
                                                 class="btn btn-danger mt-2 fs-4">Unlock</a>
                                         @endif
                                     </div>
@@ -118,7 +118,7 @@
                                         </svg>
                                         <small>Door unlock</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Doors are unlocked</h3>
-                                        <a href="{{ route('security-door_lock') }}"
+                                        <a href="{{ route('security-door_lock', $item->doors) }}"
                                             class="btn btn-warning mt-2 fs-4">Lock</a>
                                     </div>
                                 </div>
@@ -249,7 +249,7 @@
                                         <small>It's safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Indoor gate closed</h3>
                                         @if ($item->status == 0)
-                                            <a href="{{ route('security-ingate_open') }}"
+                                            <a href="{{ route('security-ingate_open', $item->indoor_gate) }}"
                                                 class="btn btn-danger mt-2 fs-4">Open</a>
                                         @endif
                                     </div>
@@ -269,7 +269,7 @@
                                         </svg>
                                         <small>It is not safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Indoor gate open</h3>
-                                        <a href="{{ route('security-ingate_close') }}"
+                                        <a href="{{ route('security-ingate_close', $item->indoor_gate) }}"
                                             class="btn btn-warning mt-2 fs-4">Close</a>
                                     </div>
                                 </div>
@@ -311,7 +311,7 @@
                                         </svg>
                                         <small>It's safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Outdoor gate closed</h3>
-                                        <a href="{{ route('security-outgate_open') }}"
+                                        <a href="{{ route('security-outgate_open', $item->outdoor_gate) }}"
                                             class="btn btn-danger mt-2 fs-4">Open</a>
                                     </div>
                                 </div>
@@ -330,7 +330,7 @@
                                         </svg>
                                         <small>It is not safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Outdoor gate open</h3>
-                                        <a href="{{ route('security-outgate_close') }}"
+                                        <a href="{{ route('security-outgate_close', $item->outdoor_gate) }}"
                                             class="btn btn-warning mt-2 fs-4">Close</a>
                                     </div>
                                 </div>
@@ -370,7 +370,7 @@
                                         </svg>
                                         <small>It's safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Perimeter is security</h3>
-                                        <a href="{{ route('security-perimeter_disarmed') }}"
+                                        <a href="{{ route('security-perimeter_disarmed', $item->perimeter) }}"
                                             class="btn btn-danger mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
@@ -389,7 +389,7 @@
                                         </svg>
                                         <small>It is not safe</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Perimeter disarmed</h3>
-                                        <a href="{{ route('security-perimeter_armed') }}"
+                                        <a href="{{ route('security-perimeter_armed', $item->perimeter) }}"
                                             class="btn btn-warning mt-2 fs-4">Secure</a>
                                     </div>
                                 </div>
@@ -410,7 +410,7 @@
                                         </svg>
                                         <small>Perimeter cross</small>
                                         <h3 class="pt-1 mt-1 mb-3 display-6 lh-1 fw-bold">Alarm</h3>
-                                        <a href="{{ route('security-perimeter_disarmed') }}"
+                                        <a href="{{ route('security-perimeter_disarmed', $item->perimeter) }}"
                                             class="btn btn-warning mt-2 fs-4">Disarm</a>
                                     </div>
                                 </div>
