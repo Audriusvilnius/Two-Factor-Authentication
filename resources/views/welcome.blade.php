@@ -868,19 +868,32 @@
                         <div>
                             <div
                                 class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="crimson"
+                                    class="bi bi-lock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1" />
                                 </svg>
                             </div>
 
                             <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
 
                             <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                Laravel has wonderful documentation covering every aspect of the framework. Whether you
-                                are a newcomer or have prior experience with Laravel, we recommend reading our
-                                documentation from beginning to end.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci blanditiis cumque
+                                libero delectus, voluptatum quis reprehenderit architecto ab, facere, eligendi quidem
+                                voluptates! Vel nihil, odit eligendi accusamus perferendis incidunt dolorem?
+                                Distinctio ex exercitationem rem dolor debitis explicabo et aspernatur, tempora minima
+                                laboriosam alias dolores. Ipsum nisi consectetur debitis fuga minima. Iure tempore ea
+                                distinctio sequi ullam totam beatae obcaecati velit.
+                                Exercitationem quas, molestiae iste sunt accusantium dignissimos! Natus, nam quasi?
+                                Maiores consequuntur assumenda eos voluptatum magnam ab perspiciatis hic, dicta
+                                accusantium, repudiandae eveniet, velit impedit numquam! Eos exercitationem placeat
+                                illo.
+                                Corporis quis ipsa porro aliquam doloremque ab consectetur vitae totam cupiditate minus
+                                praesentium dolor quo magnam harum error placeat sequi non cumque nihil deleniti quod,
+                                rem ratione. Enim, deleniti omnis.
+                                Laborum quidem accusantium sequi quasi vel saepe hic laboriosam, maiores unde animi?
+                                Ducimus, minus fuga distinctio, pariatur alias cupiditate ut impedit quasi recusandae
+                                quos, illum assumenda fugiat ea possimus tenetur?
                             </p>
                         </div>
 

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container ">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card rounded-4">
@@ -570,7 +570,7 @@
                                 </div>
                             </div>
                         @endif
-                        @if ($item->glass_break == 2)
+                        @if ($item->smoke == 2)
                             <div class="col text-center" id="smoke">
                                 <div class="card card-cover h-100 overflow-hidden text-bg-danger rounded-4 shadow-lg"
                                     style="background-image: url('unsplash-photo-1.jpg');">

@@ -39,10 +39,12 @@ class SecurityController extends Controller
             $security->glass_break = 1;
             $security->perimeter = 1;
             $security->smoke = 1;
-            $security->save();
+            $security->update();
         }
         // return view('timer.timer');
-        return view('timer.timer', ['security' => "Home security on:"]);
+        return view('timer.timer', [
+            'security' => "Home security on:"
+        ]);
     }
 
     /**
@@ -61,7 +63,7 @@ class SecurityController extends Controller
             $security->glass_break = 0;
             $security->perimeter = 0;
             $security->smoke = 0;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Home security in:",
@@ -76,7 +78,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->perimeter == 0) {
             $security->perimeter = 1;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Perimeter on in:",
@@ -91,7 +93,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->perimeter <= 2) {
             $security->perimeter = 0;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Perimeter off in:",
@@ -106,7 +108,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->outdoor_gate <= 2) {
             $security->outdoor_gate = 0;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Outdoor gate open in:",
@@ -120,7 +122,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->outdoor_gate == 0) {
             $security->outdoor_gate = 1;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Outdoor gate close in:",
@@ -134,7 +136,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->indoor_gate <= 2) {
             $security->indoor_gate = 0;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Indoor gate open in:",
@@ -148,7 +150,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->indoor_gate == 0) {
             $security->indoor_gate = 1;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Indoor gate close after:",
@@ -162,7 +164,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->doors == 0) {
             $security->doors = 1;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Door lock in:",
@@ -176,7 +178,7 @@ class SecurityController extends Controller
         $security = Security::all()->first();
         if ($security->doors <= 2) {
             $security->doors = 0;
-            $security->save();
+            $security->update();
         }
         return view('timer.timer', [
             'security' => "Door unlock in:",
