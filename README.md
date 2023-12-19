@@ -33,14 +33,14 @@ Setup:
    * Install  XAMPP with  MySQL database or MySQL database
    * Run `npm install`
    * Run `cp .env.example .env`
-   * Run `php artisan key: generate`
+   * Run `php artisan key:generate`
    * Run `composer require pragmarx/google2fa-laravel`
    * Run `composer require bacon/bacon-qr-code`
-   * Run `php artisan vendor: publish --provider="PragmaRX\Google2FALaravel\ServiceProvider"`
+   * Run `php artisan vendor:publish --provider="PragmaRX\Google2FALaravel\ServiceProvider"`
    * Start XAMPP with  MySQL database or MySQL database
    * Run `php artisan migrate`
-   * Run `php artisan migrate: fresh`
-   * Run `php artisan migrate: fresh --seed`
+   * Run `php artisan migrate:fresh`
+   * Run `php artisan migrate:fresh --seed`
    * Run `npm run build`
 3. Run web server:
    * With XAMPP (cd code/` from ../xampp/htdocs`)
