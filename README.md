@@ -47,4 +47,4 @@ Setup:
 Or with Laravel: `php artisan serve` (from anywhere)
 4. The application should now be available at http://127.0.0.1:8000
 7.	Home:
-registry user.
+   * registry user.
