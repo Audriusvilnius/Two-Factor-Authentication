@@ -3,8 +3,7 @@
 @section('content')
     <div class="container ">
         <h1>{{ $security }} </h1>
-        <div id="clockdiv">
-
+        <div id="clocksec">
             {{-- <div>
                 <span class="days"></span>
                 <div class="smalltext">Days</div>
