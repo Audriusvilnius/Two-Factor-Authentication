@@ -62,7 +62,7 @@ class SecurityController extends Controller
             $security->motion = 0;
             $security->glass_break = 0;
             $security->perimeter = 0;
-            $security->smoke = 0;
+            $security->smoke = 1;
             $security->update();
         }
         return view('timer.timer', [
